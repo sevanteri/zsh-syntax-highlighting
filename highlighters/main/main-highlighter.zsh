@@ -772,6 +772,8 @@ _zsh_highlight_main_highlighter_highlight_path_separators()
 # Else, return non-zero (and the contents of $REPLY is undefined).
 _zsh_highlight_main_highlighter_check_path()
 {
+  [[ "$ZSH_HIGHLIGHT_STYLES[path]" == "none" ]] && return 1
+
   _zsh_highlight_main_highlighter_expand_path $arg;
   local expanded_path="$REPLY"
 
